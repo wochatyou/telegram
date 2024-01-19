@@ -294,7 +294,8 @@ const char kOptionFreeType[] = "freetype";
 
 Launcher *Launcher::InstanceSetter::Instance = nullptr;
 
-std::unique_ptr<Launcher> Launcher::Create(int argc, char *argv[]) {
+std::unique_ptr<Launcher> Launcher::Create(int argc, char *argv[]) /// 转入平台特定的执行流程
+{
 	return std::make_unique<Platform::Launcher>(argc, argv);
 }
 
@@ -350,8 +351,9 @@ void Launcher::initHighDpi() {
 	}
 }
 
-int Launcher::exec() {
-	init();
+int Launcher::exec() 
+{
+	init(); /// 初始化
 
 	if (cLaunchMode() == LaunchModeFixPrevious) {
 		return psFixPrevious();
@@ -574,7 +576,8 @@ void Launcher::processArguments() {
 	}
 }
 
-int Launcher::executeApplication() {
+int Launcher::executeApplication() 
+{
 	FilteredCommandLineArguments arguments(_argc, _argv);
 	Sandbox sandbox(arguments.count(), arguments.values());
 	Ui::MainQueueProcessor processor;

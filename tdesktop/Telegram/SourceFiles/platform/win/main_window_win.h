@@ -81,7 +81,7 @@ private:
 	const std::unique_ptr<Private> _private;
 	const std::unique_ptr<QWindow> _taskbarHiderWindow;
 
-	HWND _hWnd = nullptr;
+	HWND _hWnd = nullptr; /// 这个记录本窗口的窗口句柄
 	HICON _iconBig = nullptr;
 	HICON _iconSmall = nullptr;
 	HICON _iconOverlay = nullptr;

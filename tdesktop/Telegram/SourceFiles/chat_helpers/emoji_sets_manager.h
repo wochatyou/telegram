@@ -13,8 +13,10 @@ namespace Main {
 class Session;
 } // namespace Main
 
-namespace Ui {
-namespace Emoji {
+namespace Ui  /// 名字空间: UI --> Emoji
+{
+namespace Emoji 
+{
 
 class ManageSetsBox final : public Ui::BoxContent {
 public:

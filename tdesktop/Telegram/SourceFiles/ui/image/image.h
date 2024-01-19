@@ -99,6 +99,6 @@ private:
 		bool single) const;
 
 	const QImage _data;
-	mutable base::flat_map<uint64, QPixmap> _cache;
+	mutable base::flat_map<uint64, QPixmap> _cache; /// 图片的缓存
 
 };

@@ -24,7 +24,8 @@ constexpr auto kMinYScale = 0.2;
 
 } // namespace
 
-std::vector<TimeId> DefaultTimePickerValues() {
+std::vector<TimeId> DefaultTimePickerValues() /// 返回一个数组，里面都是整型值
+{
 	return {
 		(60 * 15),
 		(60 * 30),

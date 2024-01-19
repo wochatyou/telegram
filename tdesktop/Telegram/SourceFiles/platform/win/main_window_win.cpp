@@ -193,7 +193,8 @@ bool EventFilter::mainWindowEvent(
 		UINT msg,
 		WPARAM wParam,
 		LPARAM lParam,
-		LRESULT *result) {
+		LRESULT *result) /// 处理各种Windows的消息
+{
 	switch (msg) {
 
 	case WM_DESTROY: {
@@ -209,7 +210,8 @@ bool EventFilter::mainWindowEvent(
 	} return false;
 
 	case WM_SIZE: {
-		if (wParam == SIZE_MAXIMIZED || wParam == SIZE_RESTORED || wParam == SIZE_MINIMIZED) {
+		if (wParam == SIZE_MAXIMIZED || wParam == SIZE_RESTORED || wParam == SIZE_MINIMIZED) 
+		{
 			if (wParam == SIZE_RESTORED && _window->windowState() == Qt::WindowNoState) {
 				_window->positionUpdated();
 			}
@@ -677,8 +679,9 @@ void MainWindow::validateWindowTheme(bool native, bool night) {
 	SendMessage(_hWnd, WM_NCACTIVATE, _hasActiveFrame ? 1 : 0, 0);
 }
 
-HWND MainWindow::psHwnd() const {
-	return _hWnd;
+HWND MainWindow::psHwnd() const 
+{
+	return _hWnd; /// 返回窗口句柄
 }
 
 void MainWindow::destroyCachedIcons() {
